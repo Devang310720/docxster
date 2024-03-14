@@ -179,25 +179,22 @@ document.addEventListener("DOMContentLoaded", function () {
                           `;
 
 
-
-                    document.getElementById('baseURL').href = "https://kpmg.com";
-
                     container.insertAdjacentHTML("beforeend", htmlContent);
                     (function (index, data) {
                         const taxBlock = document.querySelectorAll('.tax-block')[index];
                         taxBlock.addEventListener('click', function (event) {
 
-                            // window.open(data.Link, '_blank')
-
+                            
                             event.preventDefault();
                             var url = data.Link;
                             console.log(url);
-
+                            
                             fetch(url)
-                                .then(response => response.text())
-                                .then(data => {
-                                    document.querySelector('.content').innerHTML = data;
-                                    document.querySelector('.navbar-wrapper').style.display = 'contents';
+                            .then(response => response.text())
+                            .then(data => {
+                                
+                                localStorage.setItem('myKey', url);
+                                    window.location.href = "/texai-detail";
                                 })
                                 .catch(error => console.log(error));
                         });
