@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 var container = document.getElementById("container");
                 for (var i = 0; i < responseData.length; i++) {
                     var paginationData = responseData[i];
-                    var createdDate = new Date(paginationData.CreatedAt);
+                    var createdDate = new Date(paginationData.UpdatedAt);
                     var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
                     var day = createdDate.getDate();
                     var month = monthNames[createdDate.getMonth()];
