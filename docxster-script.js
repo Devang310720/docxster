@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         const taxBlock = document.querySelectorAll('.tax-block')[index];
                         const title = data.Title;
                         taxBlock.addEventListener('click', function () {
-                            window.open('/taxai-detail-light?title=' + encodeURIComponent(title), '_blank');
+                            window.open('/tax-ai-detail?title=' + encodeURIComponent(title), '_blank');
                             //window.open(data.Link, '_blank')
                         });
                     })(i, paginationData);
